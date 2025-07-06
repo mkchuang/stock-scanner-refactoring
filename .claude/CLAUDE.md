@@ -157,6 +157,20 @@
 3. 遇到問題立即停止並報告
 4. 完成後更新記憶文件
 
+### 測試執行規範
+```bash
+# 快速測試指令（使用虛擬環境）
+venv/bin/python -m pytest                              # 執行所有測試
+venv/bin/python -m pytest --cov=src                    # 執行測試並查看覆蓋率
+venv/bin/python -m pytest --cov=src --cov-report=term-missing  # 顯示未覆蓋行號
+venv/bin/python -m pytest tests/unit/test_cache.py     # 執行特定測試文件
+
+# 覆蓋率目標
+# - 核心模組: > 90%
+# - 業務邏輯: > 80%
+# - 整體目標: > 70%
+```
+
 ### Git 協作模式
 當需要提交代碼時：
 1. **分析階段**: 檢查並分類所有修改
